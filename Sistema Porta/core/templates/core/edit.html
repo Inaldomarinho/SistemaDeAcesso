@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="card container mt-5 pl-0 pr-0 mb-5">
+  <div class="card-header">
+      <div class="container">
+  <div class="row">
+    <div class="col-md-auto">
+      <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item mr-1">
+        <a class="nav-link" href="{% url 'index' %}">Logs</a>
+      </li>
+      <li class="nav-item mr-1">
+        <a class="nav-link active" href="">Pessoas Cadastradas</a>
+      </li>
+    </ul>
+    </div>
+    <div class="col-sm">
+       <div class="float-right">Flutua à direita em todos os tamanhos de viewport.</div><br>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="card-body pl-5 pr-5 pt-5 pb-5">
+      <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p}}
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Salvar</button>
+       </form>
+  </div>
+ </div>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="card text-center container mt-5 pl-0 pr-0 mb-5">
+  <div class="card-header">
+      <div class="container">
+  <div class="row">
+    <div class="col-md-auto">
+      <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item mr-1">
+        <a class="nav-link" href="{% url 'index' %}">Logs</a>
+      </li>
+      <li class="nav-item mr-1">
+        <a class="nav-link active" href="">Pessoas Cadastradas</a>
+      </li>
+    </ul>
+    </div>
+    <div class="col-sm">
+       <div class="float-right">Flutua à direita em todos os tamanhos de viewport.</div><br>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="card-body pl-1 pr-1">
+    <table class="table table-hover mt-2">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Key</th>
+      <th scope="col">Ativado</th>
+      <th scope="col">Dias</th>
+      <th scope="col">Data de Criação</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for pessoa in pessoas %}
+  {% if pessoa.nome == "Liberado pelo sistema"%}
+    <!-- continue -->
+  {% else %}
+      <tr>
+        <td>{{ pessoa.nome }}</td>
+        <td>{{ pessoa.key }}</td>
+        <td>{{ pessoa.ativado }}</td>
+        <td>
+          {% if pessoa.segunda %}
+          <span class="badge badge-primary">S</span>
+          {% else %}
+          <span class="badge badge-secondary">S</span>
+          {% endif %}
+          {% if pessoa.terca %}
+          <span class="badge badge-primary">T</span>
+          {% else %}
+          <span class="badge badge-secondary">T</span>
+          {% endif %}
+          {% if pessoa.quarta %}
+          <span class="badge badge-primary">Q</span>
+          {% else %}
+          <span class="badge badge-secondary">Q</span>
+          {% endif %}
+          {% if pessoa.quinta %}
+          <span class="badge badge-primary">Q</span>
+          {% else %}
+          <span class="badge badge-secondary">Q</span>
+          {% endif %}
+          {% if pessoa.sexta %}
+          <span class="badge badge-primary">S</span>
+          {% else %}
+          <span class="badge badge-secondary">S</span>
+          {% endif %}
+          {% if pessoa.sabado %}
+          <span class="badge badge-primary">S</span>
+          {% else %}
+          <span class="badge badge-secondary">S</span>
+          {% endif %}
+          {% if pessoa.domingo %}
+          <span class="badge badge-primary">D</span>
+        {% else %}
+          <span class="badge badge-secondary">D</span>
+          {% endif %}</td>
+
+        <td>{{ pessoa.created_date }}</td>
+        <td><a href="{% url 'pessoa_edit' pk=pessoa.pk %}"><button type="button" class="btn btn-outline-primary">Editar</button></a></td>
+    </tr>
+  {% endif %}
+  {% endfor %}
+  </tbody>
+</table>
+  </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="card text-center container mt-5 pl-0 pr-0 mb-5">
+  <div class="card-header">
+      <div class="container">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item mr-1">
+        <a class="nav-link active" href="">Logs</a>
+      </li>
+      <li class="nav-item mr-1">
+        <a class="nav-link" href="{% url 'list_pessoa' %}">Pessoas Cadastradas</a>
+      </li>
+    </ul>
+      </div>
+  </div>
+  <div class="card-body pl-1 pr-1">
+    <table class="table table-hover mt-2">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Data</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for log in logs %}
+    <tr>
+      <td>{{ log.key }}</td>
+      <td>{{ log.created_date }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+      {% if logs.has_other_pages %}
+    <nav>
+  <ul class="pagination justify-content-center mb-0 pb-0">
+    {% if logs.has_previous %}
+      <li class="page-item"><a class="page-link" href="?page={{ logs.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="page-item disabled"><span class="page-link" >&laquo;</span></li>
+    {% endif %}
+    {% for i in logs.paginator.page_range %}
+      {% if logs.number == i %}
+        <li class="page-item active"><span class="page-link" >{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if logs.has_next %}
+      <li class="page-item"><a class="page-link" href="?page={{ logs.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="page-item disabled"><span class="page-link" >&raquo;</span></li>
+    {% endif %}
+  </ul>
+      </nav>
+{% endif %}
+    </div>
+    </div>
+{% endblock %}
