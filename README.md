@@ -1,2 +1,2 @@
 # Sistema De Acesso
-Projeto de um sistema de acesso que libera a entrada em uma porta usando ESP32, RFID, SISTEMA WEB(Desenvolvido em Pythone que utiliza de protocolo MQTT), API(Desenvolvida em Python).
+Projeto de um sistema de uma porta automática usando ESP32, RFID, SISTEMA WEB (Back-End: Django[Python], Front-End: BootStrap), API(Django Rest Framework [Python]). 
