@@ -37,18 +37,21 @@ Inicialmente o cadastramento de novas credenciais é feito diretamente no microc
  
  O sistema web na sua página inicial exije um login para pode da acesso a área de gerenciamento.
  
+ ![Tela de Login](images/tela_login.png)
  
  Na página inicial de gerenciamento, exibi os logs de acesso. Além disso, possui as opções de liberar a tranca através do botão "abrir" ou atualizar os dados da memoria flash do esp manualmente através do botão "Atualizar".
  
- 
+ ![Tela 1](images/tela_1.png)
  
  Outra página que o sistema possui é a visualização das pessoas cadastradas, juntamente com o dias que essa pessoa tem acesso e o estado. Se o cartão estiver no estado "Ativado" a pessoa que o detem terá acesso, caso contrario ela estara "bloqueada".
  
+ ![Tela 2](images/tela_2.png)
+ 
  É possível tambem gerenciar as pessoas clickando no botão "Editar".
  
+ ![Tela 3](images/tela_3.png)
  
- 
- Essa função é de grande importânci principalmente para novos cartões que serão cadastrados, pois como foi dito anteriormente na seção "Pontos Importantes", o microcontrolador que irá cadastrar os cartões e o mesmo será gerenciado pelo sistema.
+ Essa função é de grande importância principalmente para novos cartões que serão cadastrados, pois como foi dito anteriormente na seção "Pontos Importantes", o microcontrolador que irá cadastrar os cartões e o mesmo será gerenciado pelo sistema.
  
  Ainda possui diversas funcionalidades que podem ser implementadas, mas a ideia inicial é criar um MVP (Minimum Viable Product, em português produto viável mínimo) e em seguida ir aperfeiçoando e adicionando funções.
  
