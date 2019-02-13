@@ -37,7 +37,7 @@ Inicialmente o cadastramento de novas credenciais é feito diretamente no microc
  
  O sistema web na sua página inicial exije um login para pode da acesso a área de gerenciamento.
  
- ![Tela de Login](images/tela_login.png)
+ ![Tela de Login](images/tela_inicial.png)
  
  Na página inicial de gerenciamento, exibi os logs de acesso. Além disso, possui as opções de liberar a tranca através do botão "abrir" ou atualizar os dados da memoria flash do esp manualmente através do botão "Atualizar".
  
