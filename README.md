@@ -56,6 +56,14 @@ Inicialmente o cadastramento de novas credenciais é feito diretamente no microc
  Ainda possui diversas funcionalidades que podem ser implementadas, mas a ideia inicial é criar um MVP (Minimum Viable Product, em português produto viável mínimo) e em seguida ir aperfeiçoando e adicionando funções.
  
  
+## Controlador
+
+O código do controlador se encontra na pasta ![sketch_porta2.0](sketch_porta2.0) . O mesmo ainda está em desenvolvimento e estou em dificuldades na decodificação de um JSON. Acredito que terei que fazer a decodificação manualmente.
+
+Abaixo segue as imagens do sketch na protoboard. Ainda meio bagunçado, mas como está na fase de desenvolvimento pretendo organizar apenas no final para evitar a perca de tempo.
+
+![img1](images/sketch.jpg)
+![img2](images/sketch1.jpg)
 
 ## Observações
 
