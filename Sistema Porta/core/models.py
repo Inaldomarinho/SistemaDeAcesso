@@ -4,15 +4,15 @@ from django.utils import timezone
 
 class pessoa(models.Model):
     nome = models.CharField(max_length=150)
-    key = models.CharField(max_length=15)
-    ativado = models.BooleanField()
-    segunda = models.BooleanField()
-    terca = models.BooleanField()
-    quarta = models.BooleanField()
-    quinta = models.BooleanField()
-    sexta = models.BooleanField()
-    sabado = models.BooleanField()
-    domingo = models.BooleanField()
+    key = models.CharField(max_length=14, unique=True)
+    ativado = models.BooleanField(default=False)
+    segunda = models.BooleanField(default=True)
+    terca = models.BooleanField(default=True)
+    quarta = models.BooleanField(default=True)
+    quinta = models.BooleanField(default=True)
+    sexta = models.BooleanField(default=True)
+    sabado = models.BooleanField(default=True)
+    domingo = models.BooleanField(default=True)
     created_date = models.DateTimeField(
         default=timezone.now)
 

@@ -8,9 +8,20 @@ class PessoaViewSet(ModelViewSet):
     """
     A simple ViewSet for viewing and editing accounts.
     """
-    queryset = pessoa.objects.filter(ativado = True)
+    queryset = pessoa.objects.filter(ativado = True).order_by('nome')
     serializer_class = PessoaSerializer
     http_method_names = ['get', 'post']
+
+    def create(self, request, *args, **kwargs):
+       try:
+        aux = pessoa()
+        aux.nome = "Cadastrado pela tranca"
+        aux.key = request.data['key']
+        aux.save()
+        return  Response({'status' : 'sucesso'})
+       except:
+        return Response({'status': 'falha'})
+
 
 
 class LogsViewSet(ModelViewSet):
@@ -26,4 +37,4 @@ class LogsViewSet(ModelViewSet):
         aux.save()
         return  Response({'status' : 'sucesso'})
        except:
-        return Response({'status': request.data})
+        return Response({'status': 'falha'})

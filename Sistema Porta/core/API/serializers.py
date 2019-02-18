@@ -5,7 +5,7 @@ class PessoaSerializer(ModelSerializer):
 
     class Meta:
         model = pessoa
-        fields = ('nome', 'key', 'segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado','domingo')
+        fields = ('nome', 'key', 'segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado', 'domingo')
 
 
 
@@ -13,4 +13,4 @@ class LogSerializer(ModelSerializer):
 
     class Meta:
         model = log
-        fields = ('key','created_date')
+        fields = ('key',)
