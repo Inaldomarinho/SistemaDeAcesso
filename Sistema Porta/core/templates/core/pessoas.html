@@ -35,7 +35,7 @@
   </thead>
   <tbody>
   {% for pessoa in pessoas %}
-  {% if pessoa.nome == "Liberado pelo sistema"%}
+  {% if pessoa.nome == "Liberado pelo sistema" or pessoa.nome == "Liberado pelo botão" %}
     <!-- continue -->
   {% else %}
       <tr>
